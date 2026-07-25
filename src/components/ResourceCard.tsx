@@ -2,6 +2,7 @@ import { ArrowDown } from "lucide-react"
 import type { Resource } from "@/lib/types"
 import { cn } from "@/lib/utils"
 import { HealthBadge } from "./StatusBadge"
+import { AzureIcon } from "@/lib/azure-icons"
 
 function barColor(health: Resource["health"]) {
   if (health === "healthy") return "bg-success"
@@ -10,7 +11,6 @@ function barColor(health: Resource["health"]) {
 }
 
 export function ResourceCard({ resource }: { resource: Resource }) {
-  const Icon = resource.icon
   const passed = resource.tests.filter((t) => t.status === "passed").length
   const total = resource.tests.length
   const pct = total === 0 ? 0 : Math.round((passed / total) * 100)
@@ -24,7 +24,7 @@ export function ResourceCard({ resource }: { resource: Resource }) {
             resource.iconClass,
           )}
         >
-          <Icon className="h-5 w-5" aria-hidden="true" />
+          <AzureIcon name={resource.icon} className="h-5 w-5" aria-hidden="true" />
         </span>
         <div className="min-w-0">
           <h3 className="text-sm font-semibold leading-tight text-foreground text-balance">

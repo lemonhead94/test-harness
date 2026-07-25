@@ -1,11 +1,10 @@
-import { Database, Search, FileText, Server, Sparkles, Layers } from "lucide-react"
 import type { Resource } from "./types"
 
 export const resources: Resource[] = [
   {
     id: "blob",
     name: "Azure Blob Storage",
-    icon: Database,
+    icon: "blob-storage",
     iconClass: "bg-sky-50 text-sky-600",
     health: "healthy",
     avgLatency: "120ms",
@@ -32,7 +31,7 @@ export const resources: Resource[] = [
   {
     id: "search",
     name: "Azure AI Search",
-    icon: Search,
+    icon: "ai-search",
     iconClass: "bg-indigo-50 text-indigo-600",
     health: "healthy",
     avgLatency: "283ms",
@@ -67,7 +66,7 @@ export const resources: Resource[] = [
   {
     id: "docint",
     name: "Azure Document Intelligence",
-    icon: FileText,
+    icon: "document-intelligence",
     iconClass: "bg-violet-50 text-violet-600",
     health: "degraded",
     avgLatency: "1.8s",
@@ -102,7 +101,7 @@ export const resources: Resource[] = [
   {
     id: "postgres",
     name: "Azure PostgreSQL",
-    icon: Server,
+    icon: "postgresql",
     iconClass: "bg-blue-50 text-blue-700",
     health: "healthy",
     avgLatency: "95ms",
@@ -145,7 +144,7 @@ export const resources: Resource[] = [
   {
     id: "openai",
     name: "Azure OpenAI",
-    icon: Sparkles,
+    icon: "openai",
     iconClass: "bg-emerald-50 text-emerald-600",
     health: "unhealthy",
     avgLatency: "1.6s",
@@ -196,7 +195,7 @@ export const resources: Resource[] = [
   {
     id: "redis",
     name: "Azure Redis Cache",
-    icon: Layers,
+    icon: "redis",
     iconClass: "bg-red-50 text-red-600",
     health: "healthy",
     avgLatency: "40ms",

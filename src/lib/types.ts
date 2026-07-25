@@ -1,6 +1,6 @@
-import type { LucideIcon } from "lucide-react"
+import type { AzureIconName } from "./azure-icons"
 
-export type { LucideIcon }
+export type { AzureIconName }
 
 export type TestStatus = "passed" | "failed" | "running" | "skipped"
 
@@ -18,7 +18,7 @@ export interface TestCase {
 export interface Resource {
   id: string
   name: string
-  icon: LucideIcon
+  icon: AzureIconName
   /** tailwind classes for the icon chip background + foreground */
   iconClass: string
   health: ResourceHealth

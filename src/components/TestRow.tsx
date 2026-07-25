@@ -1,14 +1,15 @@
 import { useState } from "react"
 import { ChevronDown } from "lucide-react"
-import type { LucideIcon, TestCase } from "@/lib/types"
+import type { TestCase } from "@/lib/types"
 import { cn } from "@/lib/utils"
 import { StatusBadge } from "./StatusBadge"
+import { AzureIcon, type AzureIconName } from "@/lib/azure-icons"
 
 interface TestRowProps {
   test: TestCase
   /** resource meta is only rendered for the first test in a group */
   resourceName: string
-  resourceIcon: LucideIcon
+  resourceIcon: AzureIconName
   resourceIconClass: string
   showResource: boolean
   isGroupStart: boolean
@@ -17,7 +18,7 @@ interface TestRowProps {
 export function TestRow({
   test,
   resourceName,
-  resourceIcon: Icon,
+  resourceIcon,
   resourceIconClass,
   showResource,
   isGroupStart,
@@ -42,7 +43,7 @@ export function TestRow({
                   resourceIconClass,
                 )}
               >
-                <Icon className="h-5 w-5" aria-hidden="true" />
+                <AzureIcon name={resourceIcon} className="h-5 w-5" aria-hidden="true" />
               </span>
               <span className="text-sm font-semibold leading-tight text-foreground">
                 {resourceName}
